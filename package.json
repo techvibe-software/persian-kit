@@ -1,0 +1,60 @@
+{
+  "name": "persian-kit",
+  "version": "1.0.0",
+  "description": "Zero-dependency, high-performance Persian (Farsi) utility toolkit for TypeScript & JavaScript.",
+  "author": "Techvibe (https://techvibe.ir)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/techvibe-software/persian-kit.git"
+  },
+  "homepage": "https://github.com/techvibe-software/persian-kit#readme",
+  "bugs": {
+    "url": "https://github.com/techvibe-software/persian-kit/issues"
+  },
+  "keywords": [
+    "persian",
+    "farsi",
+    "iran",
+    "national-id",
+    "codemelli",
+    "currency",
+    "toman",
+    "rial",
+    "sheba",
+    "iban",
+    "bank-card",
+    "number-to-words",
+    "mobile-validator",
+    "persian-digits",
+    "typescript",
+    "techvibe"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "bun build src/index.ts --outfile dist/index.js && bun build src/index.ts --outfile dist/index.cjs --format cjs && tsc --emitDeclarationOnly --outDir dist",
+    "test": "bun test",
+    "type-check": "tsc --noEmit",
+    "prepublishOnly": "bun run build"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}
